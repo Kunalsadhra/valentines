@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>💌 For You</title>
+  <title>💌 For Carshane</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
@@ -12,17 +12,20 @@
       justify-content: center;
       align-items: center;
       background: linear-gradient(135deg, #ff758c, #ff7eb3);
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       color: white;
       text-align: center;
+      overflow: hidden;
     }
 
     .card {
       background: rgba(255, 255, 255, 0.15);
       padding: 40px;
       border-radius: 16px;
-      max-width: 320px;
+      max-width: 340px;
       backdrop-filter: blur(10px);
+      z-index: 1;
+      position: relative;
     }
 
     h1 {
@@ -49,22 +52,77 @@
     button:hover {
       opacity: 0.9;
     }
+
+    .heart {
+      position: absolute;
+      animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity:1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity:0; }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      opacity: 0.8;
+      pointer-events: none;
+      animation: fall 1.5s forwards;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity:1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity:0; }
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Hey ❤️</h1>
-    <p>Will you be my Valentine?</p>
-    <button onclick="yesClicked()">Yes 💕</button>
+    <h1>Hey Carshane ❤️</h1>
+    <p>The only option here is...</p>
+    <button onclick="yesClicked()">Yes 😉</button>
   </div>
 
   <script>
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.textContent = '❤️';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.fontSize = 20 + Math.random() * 30 + 'px';
+      heart.style.color = ['#ffebf0','#ffc1e3','#ff8aa1','#ff4d6d'][Math.floor(Math.random()*4)];
+      heart.style.animationDuration = 4 + Math.random() * 3 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHeart, 300);
+
+    // Confetti effect
+    function createConfetti() {
+      for (let i=0; i<50; i++){
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random()*window.innerWidth + 'px';
+        confetti.style.backgroundColor = ['#ffebf0','#ffc1e3','#ff8aa1','#ff4d6d','#fff'][Math.floor(Math.random()*5)];
+        confetti.style.width = 5 + Math.random()*8 + 'px';
+        confetti.style.height = confetti.style.width;
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 2000);
+      }
+    }
+
+    // Click Yes
     function yesClicked() {
       document.querySelector('.card').innerHTML = `
-        <h1>🥰 Yay!</h1>
-        <p>I can’t wait to spend Valentine’s with you.</p>
-        <p>Love,<br/>Kunal</p>
+        <h1>🥰 Yay, Carshane!</h1>
+        <p>Showing my love to you in my own special way ❤️</p>
+        <p>Love always,<br/>Kunal 💖</p>
       `;
+      createConfetti();
     }
   </script>
 </body>
