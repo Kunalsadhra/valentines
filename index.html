@@ -38,6 +38,12 @@
       margin-bottom: 25px;
     }
 
+    .funny {
+      font-size: 0.9rem;
+      color: #ffe5ec;
+      margin-bottom: 15px;
+    }
+
     button {
       padding: 12px 24px;
       font-size: 1rem;
@@ -77,12 +83,19 @@
       0% { transform: translateY(0) rotate(0deg); opacity:1; }
       100% { transform: translateY(100vh) rotate(720deg); opacity:0; }
     }
+
+    .excited-gif {
+      width: 100%;
+      margin-top: 15px;
+      border-radius: 12px;
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>Hey Carshane ❤️</h1>
     <p>Will you be my Valentine?</p>
+    <div class="funny">Sorry, there is no other option 😏</div>
     <button onclick="yesClicked()">Yes 😉</button>
   </div>
 
@@ -121,6 +134,7 @@
         <h1>🥰 Yay, Carshane!</h1>
         <p>Showing my love to you in my own special way ❤️</p>
         <p>Love always,<br/>Kunal 💖</p>
+        <img class="excited-gif" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Excited guy GIF">
       `;
       createConfetti();
     }
