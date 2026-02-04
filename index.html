@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>💌 For You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 320px;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: white;
+      color: #ff5e8a;
+      font-weight: bold;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Hey ❤️</h1>
+    <p>Will you be my Valentine?</p>
+    <button onclick="yesClicked()">Yes 💕</button>
+  </div>
+
+  <script>
+    function yesClicked() {
+      document.querySelector('.card').innerHTML = `
+        <h1>🥰 Yay!</h1>
+        <p>I can’t wait to spend Valentine’s with you.</p>
+        <p>Love,<br/>Kunal</p>
+      `;
+    }
+  </script>
+</body>
+</html>
