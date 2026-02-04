@@ -82,7 +82,7 @@
 <body>
   <div class="card">
     <h1>Hey Carshane ❤️</h1>
-    <p>The only option here is...</p>
+    <p>Will you be my Valentine?</p>
     <button onclick="yesClicked()">Yes 😉</button>
   </div>
 
@@ -94,7 +94,7 @@
       heart.textContent = '❤️';
       heart.style.left = Math.random() * window.innerWidth + 'px';
       heart.style.fontSize = 20 + Math.random() * 30 + 'px';
-      heart.style.color = ['#ffebf0','#ffc1e3','#ff8aa1','#ff4d6d'][Math.floor(Math.random()*4)];
+      heart.style.color = ['#ffebf0','#ffc1e3','#ff8aa1','#ff4d6d','#fff'][Math.floor(Math.random()*5)];
       heart.style.animationDuration = 4 + Math.random() * 3 + 's';
       document.body.appendChild(heart);
       setTimeout(() => heart.remove(), 7000);
